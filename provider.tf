@@ -5,6 +5,12 @@ terraform {
       version = "4.40.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "ramaitfrg"
+    storage_account_name = "ramaitfstg"
+    container_name       = "ramaitfstate"
+    key                  = "ramaiterraform.tfstate"
+  }
 }
 
 provider "azurerm" {
